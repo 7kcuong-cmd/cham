@@ -1,0 +1,890 @@
+{
+  "@@locale": "vi",
+  "appTitle": "Chạm",
+  "@appTitle": {
+    "description": "App name shown in the task switcher and sign-in wordmark"
+  },
+  "signInTagline": "Gặp người mới, chỉ một chạm",
+  "@signInTagline": {
+    "description": "Tagline under the wordmark on the sign-in screen"
+  },
+  "signInGoogle": "Tiếp tục với Google",
+  "@signInGoogle": {
+    "description": "Google sign-in button"
+  },
+  "signInApple": "Tiếp tục với Apple",
+  "@signInApple": {
+    "description": "Apple sign-in button (iOS only)"
+  },
+  "signInLegal": "Tiếp tục nghĩa là bạn đủ 18 tuổi và đồng ý với Điều khoản và Quyền riêng tư.",
+  "@signInLegal": {
+    "description": "Legal notice under the sign-in buttons"
+  },
+  "devUidHint": "uid thử nghiệm (vd. alice)",
+  "@devUidHint": {
+    "description": "Hint of the uid field in dev auth mode"
+  },
+  "devUidInvalid": "uid chỉ gồm chữ, số, gạch dưới, gạch nối (1–64 ký tự)",
+  "@devUidInvalid": {
+    "description": "Validation error for the dev uid field"
+  },
+  "devSignIn": "Đăng nhập dev",
+  "@devSignIn": {
+    "description": "Button in dev auth mode"
+  },
+  "devBadge": "DEV",
+  "@devBadge": {
+    "description": "Small badge shown when AUTH_MODE=dev"
+  },
+  "birthYearTitle": "Bạn sinh năm nào?",
+  "@birthYearTitle": {
+    "description": "Title of the birth-year screen"
+  },
+  "birthYearBody": "Chạm chỉ dành cho người từ 18 tuổi. Năm sinh không thể đổi sau này.",
+  "@birthYearBody": {
+    "description": "Explanation on the birth-year screen"
+  },
+  "birthYearConfirmTitle": "Xác nhận năm sinh {year}?",
+  "@birthYearConfirmTitle": {
+    "description": "Confirmation dialog title; year is passed as text to avoid number grouping",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "birthYearConfirmBody": "Bạn sẽ không thể sửa lại.",
+  "@birthYearConfirmBody": {
+    "description": "Confirmation dialog body"
+  },
+  "continueAction": "Tiếp tục",
+  "@continueAction": {
+    "description": "Generic continue button"
+  },
+  "confirm": "Xác nhận",
+  "@confirm": {
+    "description": "Generic confirm button"
+  },
+  "cancel": "Hủy",
+  "@cancel": {
+    "description": "Generic cancel button"
+  },
+  "save": "Lưu",
+  "@save": {
+    "description": "Generic save button"
+  },
+  "retry": "Thử lại",
+  "@retry": {
+    "description": "Generic retry button"
+  },
+  "signOut": "Đăng xuất",
+  "@signOut": {
+    "description": "Sign out action"
+  },
+  "underageTitle": "Chạm chưa dành cho bạn",
+  "@underageTitle": {
+    "description": "Title of the underage screen"
+  },
+  "underageBody": "Bạn cần đủ 18 tuổi để dùng Chạm.",
+  "@underageBody": {
+    "description": "Body of the underage screen"
+  },
+  "tabSwipe": "Lướt",
+  "@tabSwipe": {
+    "description": "Bottom tab: swipe/call"
+  },
+  "tabSettings": "Cài đặt",
+  "@tabSettings": {
+    "description": "Bottom tab: settings"
+  },
+  "searching": "Đang tìm người phù hợp…",
+  "@searching": {
+    "description": "Shown while waiting in the matching queue"
+  },
+  "searchingLong": "Ít người đang online, chờ thêm chút nhé.",
+  "@searchingLong": {
+    "description": "Shown after 10 seconds of searching"
+  },
+  "connecting": "Đang kết nối…",
+  "@connecting": {
+    "description": "Shown while the call room is connecting"
+  },
+  "swipeHint": "Vuốt lên để gặp người khác",
+  "@swipeHint": {
+    "description": "Swipe hint, first 3 calls only"
+  },
+  "permissionTitle": "Cho phép camera và micro",
+  "@permissionTitle": {
+    "description": "Permission screen title"
+  },
+  "permissionBody": "Chạm cần camera và micro để gọi video. Không có gì được ghi lại.",
+  "@permissionBody": {
+    "description": "Permission screen body"
+  },
+  "permissionAllow": "Cho phép",
+  "@permissionAllow": {
+    "description": "Button that requests camera and microphone permission"
+  },
+  "openSettings": "Mở Cài đặt",
+  "@openSettings": {
+    "description": "Button that opens system app settings after permanent denial"
+  },
+  "reconnecting": "Đang kết nối lại…",
+  "@reconnecting": {
+    "description": "Banner shown while the connection to the server is lost"
+  },
+  "a11yMute": "Tắt micro",
+  "@a11yMute": {
+    "description": "Accessibility label"
+  },
+  "a11yUnmute": "Bật micro",
+  "@a11yUnmute": {
+    "description": "Accessibility label"
+  },
+  "a11yCameraOff": "Tắt camera",
+  "@a11yCameraOff": {
+    "description": "Accessibility label"
+  },
+  "a11yCameraOn": "Bật camera",
+  "@a11yCameraOn": {
+    "description": "Accessibility label"
+  },
+  "a11ySwitchCamera": "Đổi camera",
+  "@a11ySwitchCamera": {
+    "description": "Accessibility label"
+  },
+  "a11ySafety": "An toàn",
+  "@a11ySafety": {
+    "description": "Accessibility label of the shield button"
+  },
+  "safetyTitle": "An toàn",
+  "@safetyTitle": {
+    "description": "Title of the safety sheet"
+  },
+  "reportUser": "Báo cáo {name}",
+  "@reportUser": {
+    "description": "Report row in the safety sheet",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "blockUser": "Chặn {name}",
+  "@blockUser": {
+    "description": "Block row in the safety sheet",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportTitle": "Vì sao bạn báo cáo?",
+  "@reportTitle": {
+    "description": "Title of the report step"
+  },
+  "reasonNudity": "Khỏa thân / nội dung tình dục",
+  "@reasonNudity": {
+    "description": "Report reason: nudity"
+  },
+  "reasonHarassment": "Quấy rối / thù ghét",
+  "@reasonHarassment": {
+    "description": "Report reason: harassment"
+  },
+  "reasonUnderage": "Có vẻ dưới 18 tuổi",
+  "@reasonUnderage": {
+    "description": "Report reason: underage"
+  },
+  "reasonSpam": "Spam / quảng cáo",
+  "@reasonSpam": {
+    "description": "Report reason: spam"
+  },
+  "reasonViolence": "Bạo lực / đe dọa",
+  "@reasonViolence": {
+    "description": "Report reason: violence"
+  },
+  "reasonOther": "Lý do khác",
+  "@reasonOther": {
+    "description": "Report reason: other"
+  },
+  "reportNoteHint": "Thêm chi tiết (không bắt buộc)",
+  "@reportNoteHint": {
+    "description": "Hint of the optional report note"
+  },
+  "alsoBlock": "Chặn luôn người này",
+  "@alsoBlock": {
+    "description": "Checkbox in the report step"
+  },
+  "submitReport": "Gửi báo cáo",
+  "@submitReport": {
+    "description": "Submit button of the report step"
+  },
+  "reportThanks": "Đã gửi báo cáo. Cảm ơn bạn.",
+  "@reportThanks": {
+    "description": "Snackbar after a report"
+  },
+  "blockConfirmTitle": "Chặn {name}?",
+  "@blockConfirmTitle": {
+    "description": "Block confirmation title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "blockConfirmBody": "Hai bạn sẽ không bao giờ được ghép với nhau nữa.",
+  "@blockConfirmBody": {
+    "description": "Block confirmation body"
+  },
+  "block": "Chặn",
+  "@block": {
+    "description": "Block button"
+  },
+  "blockDone": "Đã chặn.",
+  "@blockDone": {
+    "description": "Snackbar after blocking"
+  },
+  "displayName": "Tên hiển thị",
+  "@displayName": {
+    "description": "Settings row"
+  },
+  "displayNameInvalid": "Tên từ 1 đến 30 ký tự",
+  "@displayNameInvalid": {
+    "description": "Display name validation error"
+  },
+  "language": "Ngôn ngữ",
+  "@language": {
+    "description": "Settings row"
+  },
+  "languageVi": "Tiếng Việt",
+  "@languageVi": {
+    "description": "Language option"
+  },
+  "languageEn": "English",
+  "@languageEn": {
+    "description": "Language option"
+  },
+  "terms": "Điều khoản",
+  "@terms": {
+    "description": "Terms link"
+  },
+  "privacy": "Quyền riêng tư",
+  "@privacy": {
+    "description": "Privacy link"
+  },
+  "appVersion": "Phiên bản {version}",
+  "@appVersion": {
+    "description": "App version line in settings",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "errorNetwork": "Không có kết nối mạng.",
+  "@errorNetwork": {
+    "description": "Error: network"
+  },
+  "errorGeneric": "Đã có lỗi, vui lòng thử lại.",
+  "@errorGeneric": {
+    "description": "Error: generic"
+  },
+  "errorSessionExpired": "Phiên đăng nhập đã hết hạn.",
+  "@errorSessionExpired": {
+    "description": "Error: UNAUTHENTICATED"
+  },
+  "errorRateLimited": "Bạn thao tác hơi nhanh, chờ một chút nhé.",
+  "@errorRateLimited": {
+    "description": "Error: RATE_LIMITED"
+  },
+  "errorBanned": "Tài khoản đã bị khóa.",
+  "@errorBanned": {
+    "description": "Error: ACCOUNT_BANNED"
+  },
+  "errorSessionReplaced": "Bạn đang dùng Chạm trên thiết bị khác.",
+  "@errorSessionReplaced": {
+    "description": "Error: SESSION_REPLACED"
+  },
+  "errorCallUnavailable": "Không thể kết nối cuộc gọi lúc này.",
+  "@errorCallUnavailable": {
+    "description": "Error: CALL_PROVIDER_ERROR"
+  },
+  "tabContacts": "Danh bạ",
+  "@tabContacts": {
+    "description": "Bottom tab: contacts"
+  },
+  "contactsEmpty": "Chưa có bạn nào. Trong cuộc gọi, khi cả hai cùng bấm “Thêm bạn”, hai bạn sẽ có nhau trong danh bạ.",
+  "@contactsEmpty": {
+    "description": "Empty contacts list"
+  },
+  "contactOnline": "Đang hoạt động",
+  "@contactOnline": {
+    "description": "Accessibility label of the green online dot"
+  },
+  "contactCall": "Gọi",
+  "@contactCall": {
+    "description": "Call-a-contact button tooltip"
+  },
+  "contactRemove": "Xóa khỏi danh bạ",
+  "@contactRemove": {
+    "description": "Action in the contact bottom sheet"
+  },
+  "contactRemoveConfirmTitle": "Xóa {name} khỏi danh bạ?",
+  "@contactRemoveConfirmTitle": {
+    "description": "Remove-contact dialog title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "contactRemoveConfirmBody": "Hai bạn sẽ không còn trong danh bạ của nhau.",
+  "@contactRemoveConfirmBody": {
+    "description": "Remove-contact dialog body"
+  },
+  "remove": "Xóa",
+  "@remove": {
+    "description": "Generic remove button"
+  },
+  "addFriend": "Thêm bạn",
+  "@addFriend": {
+    "description": "Add-friend button tooltip"
+  },
+  "addFriendPending": "Đã gửi. Chờ {name} cũng bấm Thêm bạn.",
+  "@addFriendPending": {
+    "description": "Toast after tapping Add friend",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addFriendRequested": "{name} muốn kết bạn. Bấm Thêm bạn để đồng ý.",
+  "@addFriendRequested": {
+    "description": "Toast when the other person tapped Add friend first",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addFriendDone": "Bạn và {name} đã là bạn.",
+  "@addFriendDone": {
+    "description": "Toast when both tapped Add friend",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "incomingCallTitle": "{name} đang gọi",
+  "@incomingCallTitle": {
+    "description": "Title of the incoming call screen",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "incomingAccept": "Nghe",
+  "@incomingAccept": {
+    "description": "Accept an incoming call"
+  },
+  "incomingDecline": "Từ chối",
+  "@incomingDecline": {
+    "description": "Decline an incoming call"
+  },
+  "outgoingCalling": "Đang gọi {name}…",
+  "@outgoingCalling": {
+    "description": "Shown while calling a contact",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "outgoingCancel": "Hủy cuộc gọi",
+  "@outgoingCancel": {
+    "description": "Cancel an outgoing call"
+  },
+  "inviteEndedDeclined": "Cuộc gọi bị từ chối.",
+  "@inviteEndedDeclined": {
+    "description": "Snackbar: the callee declined"
+  },
+  "inviteEndedTimeout": "Không có người trả lời.",
+  "@inviteEndedTimeout": {
+    "description": "Snackbar: invite timed out"
+  },
+  "inviteEndedBusy": "Người này đang bận.",
+  "@inviteEndedBusy": {
+    "description": "Snackbar: callee busy"
+  },
+  "inviteEndedCancelled": "Cuộc gọi đã kết thúc.",
+  "@inviteEndedCancelled": {
+    "description": "Snackbar: invite cancelled"
+  },
+  "inviteEndedFailed": "Không thể kết nối cuộc gọi.",
+  "@inviteEndedFailed": {
+    "description": "Snackbar: invite failed"
+  },
+  "blockedUsers": "Người đã chặn",
+  "@blockedUsers": {
+    "description": "Settings row and screen title"
+  },
+  "blockedUsersEmpty": "Bạn chưa chặn ai.",
+  "@blockedUsersEmpty": {
+    "description": "Empty blocked list"
+  },
+  "unblock": "Bỏ chặn",
+  "@unblock": {
+    "description": "Unblock button"
+  },
+  "unblockConfirmTitle": "Bỏ chặn {name}?",
+  "@unblockConfirmTitle": {
+    "description": "Unblock dialog title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "unblockConfirmBody": "Hai bạn có thể được ghép gặp lại. Danh bạ không được khôi phục.",
+  "@unblockConfirmBody": {
+    "description": "Unblock dialog body"
+  },
+  "notificationsRationale": "Bật thông báo để không lỡ cuộc gọi từ bạn bè.",
+  "@notificationsRationale": {
+    "description": "Hint shown when notification permission is off"
+  },
+  "errorContactLimit": "Danh bạ đã đầy.",
+  "@errorContactLimit": {
+    "description": "Error: CONTACT_LIMIT"
+  },
+  "errorContactNotFound": "Không thể gọi người này.",
+  "@errorContactNotFound": {
+    "description": "Error: CONTACT_NOT_FOUND"
+  },
+  "errorFeatureDisabled": "Tính năng này đang tạm tắt.",
+  "@errorFeatureDisabled": {
+    "description": "Error: FEATURE_DISABLED"
+  },
+  "errorPermissionDenied": "Cần cho phép camera và micro để gọi.",
+  "@errorPermissionDenied": {
+    "description": "Error: local code PERMISSION_DENIED"
+  },
+  "a11yHeart": "Thả tim",
+  "@a11yHeart": {
+    "description": "Accessibility label of the heart button"
+  },
+  "a11yComment": "Bình luận",
+  "@a11yComment": {
+    "description": "Accessibility label of the comment button"
+  },
+  "a11yGame": "Chơi trò chơi",
+  "@a11yGame": {
+    "description": "Accessibility label of the game button"
+  },
+  "myPoints": "Điểm của tôi",
+  "@myPoints": {
+    "description": "Settings row and screen title"
+  },
+  "pointsBalance": "{points} điểm",
+  "@pointsBalance": {
+    "description": "Balance text",
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "pointsHistory": "Lịch sử điểm",
+  "@pointsHistory": {
+    "description": "Section title"
+  },
+  "pointsHistoryEmpty": "Chưa có giao dịch điểm nào.",
+  "@pointsHistoryEmpty": {
+    "description": "Empty ledger"
+  },
+  "pointsReasonGift": "Quà",
+  "@pointsReasonGift": {
+    "description": "Ledger reason: gift"
+  },
+  "pointsReasonHeartRx": "Nhận tim",
+  "@pointsReasonHeartRx": {
+    "description": "Ledger reason: heart_rx"
+  },
+  "pointsReasonHeartTx": "Gửi tim",
+  "@pointsReasonHeartTx": {
+    "description": "Ledger reason: heart_tx"
+  },
+  "pointsReasonUnlock": "Mở khóa",
+  "@pointsReasonUnlock": {
+    "description": "Ledger reason: unlock"
+  },
+  "pointsReasonGameFee": "Phí trò chơi",
+  "@pointsReasonGameFee": {
+    "description": "Ledger reason: game_fee"
+  },
+  "pointsReasonGameRefund": "Hoàn phí trò chơi",
+  "@pointsReasonGameRefund": {
+    "description": "Ledger reason: game_refund"
+  },
+  "pointsReasonGameWin": "Thắng trò chơi",
+  "@pointsReasonGameWin": {
+    "description": "Ledger reason: game_win"
+  },
+  "pointsReasonGameDraw": "Hòa trò chơi",
+  "@pointsReasonGameDraw": {
+    "description": "Ledger reason: game_draw"
+  },
+  "pointsReasonAdjust": "Điều chỉnh",
+  "@pointsReasonAdjust": {
+    "description": "Ledger reason: admin_adjust"
+  },
+  "pointsReasonOther": "Khác",
+  "@pointsReasonOther": {
+    "description": "Ledger reason not known to this app version"
+  },
+  "pointsDeltaChip": "+{points}",
+  "@pointsDeltaChip": {
+    "description": "Small chip next to the heart button after earning points",
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "unlocksTitle": "Mở khóa",
+  "@unlocksTitle": {
+    "description": "Section title"
+  },
+  "unlockStrictLanguage": "Chỉ ghép cùng ngôn ngữ",
+  "@unlockStrictLanguage": {
+    "description": "Unlock name"
+  },
+  "unlockStrictLanguageBody": "Không bao giờ ghép với người nói ngôn ngữ khác trong {days} ngày.",
+  "@unlockStrictLanguageBody": {
+    "description": "Unlock description",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "unlockBuy": "Mở khóa · {cost} điểm",
+  "@unlockBuy": {
+    "description": "Buy button",
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
+  "unlockActiveUntil": "Đang bật đến {date}",
+  "@unlockActiveUntil": {
+    "description": "Shown while an unlock is active",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "unlockDone": "Đã mở khóa.",
+  "@unlockDone": {
+    "description": "Snackbar after a successful purchase"
+  },
+  "giftDropTitle": "Quà {points} điểm!",
+  "@giftDropTitle": {
+    "description": "Gift card title",
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "giftClaim": "Nhận",
+  "@giftClaim": {
+    "description": "Claim gift button"
+  },
+  "giftClaimed": "+{points} điểm",
+  "@giftClaimed": {
+    "description": "Shown after claiming a gift",
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "commentHint": "Viết bình luận…",
+  "@commentHint": {
+    "description": "Hint of the comment field"
+  },
+  "commentSend": "Gửi",
+  "@commentSend": {
+    "description": "Send comment button"
+  },
+  "errorInsufficientPoints": "Bạn chưa đủ điểm.",
+  "@errorInsufficientPoints": {
+    "description": "Error: INSUFFICIENT_POINTS"
+  },
+  "errorGiftExpired": "Quà đã hết hạn.",
+  "@errorGiftExpired": {
+    "description": "Error: GIFT_NOT_FOUND"
+  },
+  "tabGames": "Trò chơi",
+  "@tabGames": {
+    "description": "Bottom tab: games"
+  },
+  "gameTicTacToe": "Cờ caro 3×3",
+  "@gameTicTacToe": {
+    "description": "Game name"
+  },
+  "gamePlayInCallHint": "Chơi trong lúc gọi video: bấm biểu tượng tay cầm.",
+  "@gamePlayInCallHint": {
+    "description": "Hint on the games tab"
+  },
+  "gameInviteFrom": "{name} mời bạn chơi cờ caro",
+  "@gameInviteFrom": {
+    "description": "Invite banner",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gameInviteSent": "Đã mời. Chờ đối phương…",
+  "@gameInviteSent": {
+    "description": "Shown to the inviter"
+  },
+  "gameAccept": "Chơi",
+  "@gameAccept": {
+    "description": "Accept game invite"
+  },
+  "gameDecline": "Không",
+  "@gameDecline": {
+    "description": "Decline game invite"
+  },
+  "gameEntryFee": "Phí vào: {fee} điểm",
+  "@gameEntryFee": {
+    "description": "Entry fee line",
+    "placeholders": {
+      "fee": {
+        "type": "String"
+      }
+    }
+  },
+  "gameYourTurn": "Lượt của bạn",
+  "@gameYourTurn": {
+    "description": "Turn indicator"
+  },
+  "gameTheirTurn": "Lượt của {name}",
+  "@gameTheirTurn": {
+    "description": "Turn indicator",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gameWin": "Bạn thắng!",
+  "@gameWin": {
+    "description": "Result banner"
+  },
+  "gameLose": "Bạn thua",
+  "@gameLose": {
+    "description": "Result banner"
+  },
+  "gameDraw": "Hòa",
+  "@gameDraw": {
+    "description": "Result banner"
+  },
+  "gameTimeoutWin": "Đối phương hết giờ. Bạn thắng!",
+  "@gameTimeoutWin": {
+    "description": "Result banner"
+  },
+  "gameTimeoutLose": "Hết giờ. Bạn thua",
+  "@gameTimeoutLose": {
+    "description": "Result banner"
+  },
+  "gameAbandoned": "Ván đã dừng",
+  "@gameAbandoned": {
+    "description": "Result banner"
+  },
+  "gameDeclined": "Đối phương không chơi",
+  "@gameDeclined": {
+    "description": "Result banner"
+  },
+  "gameReward": "+{points} điểm",
+  "@gameReward": {
+    "description": "Reward line on the result banner",
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "gameResign": "Bỏ cuộc",
+  "@gameResign": {
+    "description": "Resign button"
+  },
+  "gameHistory": "Lịch sử",
+  "@gameHistory": {
+    "description": "Section title"
+  },
+  "gameHistoryEmpty": "Chưa có ván nào.",
+  "@gameHistoryEmpty": {
+    "description": "Empty history"
+  },
+  "gameOutcomeWin": "Thắng",
+  "@gameOutcomeWin": {
+    "description": "History outcome"
+  },
+  "gameOutcomeLoss": "Thua",
+  "@gameOutcomeLoss": {
+    "description": "History outcome"
+  },
+  "gameOutcomeDraw": "Hòa",
+  "@gameOutcomeDraw": {
+    "description": "History outcome"
+  },
+  "gameOutcomeNone": "Dừng",
+  "@gameOutcomeNone": {
+    "description": "History outcome"
+  },
+  "gameCellLabel": "Ô {row}, {col}",
+  "@gameCellLabel": {
+    "description": "Accessibility label of a board cell",
+    "placeholders": {
+      "row": {
+        "type": "String"
+      },
+      "col": {
+        "type": "String"
+      }
+    }
+  },
+  "gameCellX": "quân X",
+  "@gameCellX": {
+    "description": "Accessibility: cell holds X"
+  },
+  "gameCellO": "quân O",
+  "@gameCellO": {
+    "description": "Accessibility: cell holds O"
+  },
+  "errorNotYourTurn": "Chưa tới lượt bạn.",
+  "@errorNotYourTurn": {
+    "description": "Error: NOT_YOUR_TURN"
+  },
+  "errorIllegalMove": "Nước đi không hợp lệ.",
+  "@errorIllegalMove": {
+    "description": "Error: ILLEGAL_MOVE"
+  },
+  "errorGameActive": "Đang có một ván rồi.",
+  "@errorGameActive": {
+    "description": "Error: GAME_ALREADY_ACTIVE"
+  },
+  "errorGameGone": "Ván này không còn.",
+  "@errorGameGone": {
+    "description": "Error: GAME_NOT_FOUND"
+  },
+  "interestsTitle": "Bạn quan tâm điều gì?",
+  "@interestsTitle": {
+    "description": "Sign-up step: pick interest groups"
+  },
+  "interestsBody": "Chọn tối đa 12 nhóm để ghép bạn với người có cùng sở thích. Bạn có thể bỏ qua.",
+  "@interestsBody": {
+    "description": "Sign-up step explanation"
+  },
+  "interestsSkip": "Bỏ qua",
+  "@interestsSkip": {
+    "description": "Skip interest selection"
+  },
+  "interestsCount": "Đã chọn {count}/{max}",
+  "@interestsCount": {
+    "description": "Selected interest counter; numbers passed as text",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "errorNetworkPoor": "Mạng quá yếu nên cuộc gọi đã dừng. Hãy chuyển sang Wi‑Fi hoặc mạng ổn định hơn rồi thử lại.",
+  "@errorNetworkPoor": {
+    "description": "Call could not connect by P2P nor LiveKit fallback"
+  },
+  "contactHungUp": "{name} đã cúp máy.",
+  "@contactHungUp": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "contactSwipeHint": "Vuốt lên để cúp máy",
+  "@contactSwipeHint": {
+    "description": "contactSwipeHint"
+  },
+  "hangUp": "Cúp máy",
+  "@hangUp": {
+    "description": "hangUp"
+  },
+  "peerAnomalyTitle": "Đã ngắt kết nối để bảo vệ bạn",
+  "@peerAnomalyTitle": {
+    "description": "Dialog title when the peer looked like probing the user's IP"
+  },
+  "peerAnomalyBody": "Người này có dấu hiệu dò địa chỉ mạng của bạn. Chạm đã ngắt cuộc gọi và chặn người này. Bạn có thể xem lại ở Cài đặt → Người đã chặn.",
+  "@peerAnomalyBody": {
+    "description": "Dialog and snackbar body for peer anomaly"
+  },
+  "peerAnomalyOk": "Đã hiểu",
+  "@peerAnomalyOk": {
+    "description": "Dismiss button"
+  },
+  "errorShieldPause": "Chạm tạm dừng ghép vài chục giây để bảo vệ bạn. Sẽ tự tìm người mới sau đó.",
+  "@errorShieldPause": {
+    "description": "Shown when matching is paused after repeated incidents"
+  },
+  "callReconnecting": "Mạng bị ngắt, đang tự nối lại…",
+  "@callReconnecting": {
+    "description": "Mạng ngắt giữa cuộc gọi, đang tự nối lại"
+  },
+  "callReconnected": "Đã nối lại.",
+  "@callReconnected": {
+    "description": "Đã nối lại cuộc gọi"
+  },
+  "callRelaySlow": "Mạng đang chậm: cuộc gọi đi qua đường dự phòng với chất lượng thấp hơn để giữ liên lạc.",
+  "@callRelaySlow": {
+    "description": "Thông báo chất lượng cuộc gọi khi đi qua relay"
+  },
+  "callRelayVerySlow": "Mạng quá chậm, chỉ còn tiếng. Hãy chuyển sang Wi‑Fi hoặc mạng ổn định hơn.",
+  "@callRelayVerySlow": {
+    "description": "Thông báo chất lượng cuộc gọi khi đi qua relay"
+  },
+  "callP2pRestored": "Đã kết nối trực tiếp, chất lượng trở lại bình thường.",
+  "@callP2pRestored": {
+    "description": "Thông báo chất lượng cuộc gọi khi đi qua relay"
+  },
+  "swipeRelaySkipped": "Mạng yếu nên cuộc gọi phải đi đường dự phòng. Đã chuyển sang người khác.",
+  "@swipeRelaySkipped": {
+    "description": "Lướt: mạng yếu"
+  },
+  "swipeWeakStopped": "Mạng vẫn yếu sau nhiều lần thử. Đã dừng tìm người.",
+  "@swipeWeakStopped": {
+    "description": "Lướt: mạng yếu"
+  },
+  "swipeWeakTitle": "Mạng đang quá yếu",
+  "@swipeWeakTitle": {
+    "description": "Lướt: mạng yếu"
+  },
+  "swipeWeakBody": "Nhiều cuộc gọi liên tiếp không kết nối trực tiếp được nên đã dừng để tránh giật lag. Hãy chuyển sang Wi‑Fi hoặc mạng ổn định hơn rồi thử lại.",
+  "@swipeWeakBody": {
+    "description": "Lướt: mạng yếu"
+  },
+  "swipeWeakRetry": "Thử lại",
+  "@swipeWeakRetry": {
+    "description": "Lướt: mạng yếu"
+  }
+}

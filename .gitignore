@@ -1,0 +1,10 @@
+build/
+.dart_tool/
+.env
+.env.*
+google-services.json
+GoogleService-Info.plist
+*.apk
+*.keystore
+*.jks
+*.pem

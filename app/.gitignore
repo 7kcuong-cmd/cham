@@ -1,0 +1,37 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+*.iml
+.idea/
+.vscode/
+
+# Mã sinh ra bởi `flutter gen-l10n` (Flutter hiện hành sinh vào lib/l10n)
+lib/l10n/app_localizations*.dart
+
+# Cấu hình Firebase – KHÔNG đưa vào repo (ADR-003 mục 7)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+ios/firebase_app_id_file.json
+lib/firebase_options.dart
+
+# Khóa ký / bí mật
+*.jks
+*.keystore
+key.properties
+.env
+
+# Bổ sung ở bước duyệt
+env.firebase.json
+env.*.json
+*.p12
+*.mobileprovision
+*.pem
+android/local.properties
+android/key.properties
+ios/Flutter/Generated.xcconfig
+coverage/
+.fvm/
+.DS_Store

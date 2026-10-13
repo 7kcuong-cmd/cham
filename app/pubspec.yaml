@@ -1,0 +1,88 @@
+name: cham
+description: "Chạm - ứng dụng gọi video ngẫu nhiên 1-1 kiểu lướt (Android + iOS)."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  # Sàn phiên bản khớp livekit_client 2.13 (cần Flutter >= 3.38 / Dart >= 3.10 vì native assets).
+  # Mã dịch sinh vào lib/l10n (gói synthetic flutter_gen đã bị gỡ khỏi Flutter) – xem l10n.yaml.
+  sdk: ^3.10.0
+  flutter: ">=3.38.0"
+
+# Các ràng buộc gói dưới đây CHƯA được `flutter pub get` kiểm (máy viết mã không có Flutter/pub.dev).
+# Cách chuẩn: chạy tool/bootstrap.sh (hoặc .ps1); nếu pub báo xung đột, dùng `flutter pub upgrade --major-versions`
+# rồi ghi phiên bản thật vào tasks/02-code/T-009-nhat-ky.md và commit pubspec.lock.
+# Lưu ý API: google_sign_in ghim ^6.x (API `GoogleSignIn().signIn()`); bản 7.x đổi API
+# (`GoogleSignIn.instance.authenticate()`), nếu nâng cấp phải sửa lib/services/auth_service.dart.
+# livekit_client ghim >= 2.13 vì call_service.dart được đối chiếu với API của 2.13.
+dependencies:
+  share_plus: ^10.0.0
+  file_picker: ^8.1.2
+  cham_recorder:
+    path: packages/cham_recorder
+  cham_notify:
+    path: packages/cham_notify
+  cham_beauty:
+    path: packages/cham_beauty
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  provider: ^6.1.2
+  http: ^1.2.2
+  web_socket_channel: ^3.0.1
+  livekit_client: ^2.13.0
+  # Gọi video P2P trực tiếp (WebRTC). Cùng họ với bản livekit_client dùng; pub sẽ chọn bản tương thích.
+  flutter_webrtc: ^1.0.0
+  firebase_core: ^3.8.1
+  firebase_auth: ^5.3.4
+  # GĐ2 (T-108): thông báo đẩy. Phiên bản CHƯA được `flutter pub get` kiểm; dự kiến 15.x tương thích
+  # firebase_core ^3.x (bảng FlutterFire). Nếu pub báo xung đột, ghi phiên bản thật vào nhật ký T-108.
+  firebase_messaging: ^15.1.6
+  google_sign_in: ^6.2.2
+  permission_handler: ^11.3.1
+  photo_manager: ^3.6.0
+  connectivity_plus: ^7.0.0
+  google_mlkit_face_detection: ^0.11.0
+  url_launcher: ^6.3.1
+  package_info_plus: ^8.1.2
+  shared_preferences: ^2.3.4
+  # Giữ màn hình sáng khi ghép cặp/gọi video.
+  wakelock_plus: ^1.2.10
+  # Tin nhắn mã hóa đầu cuối (X25519 + AES-GCM) và lưu lịch sử trên máy.
+  cryptography: ^2.7.0
+  flutter_local_notifications: ^18.0.1
+  flutter_secure_storage: ^9.2.2
+  local_auth: ^2.3.0
+  mobile_scanner: ^6.0.2
+  qr_flutter: ^4.1.0
+  sqflite: ^2.4.1
+  path_provider: ^2.1.5
+  # Ảnh đại diện từ thư viện ảnh; nhạc chờ/chuông tải về từ cấu hình từ xa.
+  image_picker: ^1.1.2
+  audioplayers: ^6.1.0
+  video_player: ^2.9.2
+  archive: ^4.0.2
+  webview_flutter: ^4.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/audio/
+    - assets/games/
+  shaders:
+    - shaders/face_warp.frag
+  fonts:
+    - family: BeVietnamPro
+      fonts:
+        - asset: assets/fonts/BeVietnamPro-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/BeVietnamPro-SemiBold.ttf
+          weight: 600

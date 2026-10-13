@@ -1,0 +1,16 @@
+name: cham_notify
+description: Bong bóng chat (Android Bubbles) cho Chạm. CHƯA THỬ TRÊN MÁY THẬT.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: vn.cham.notify
+        pluginClass: ChamNotifyPlugin

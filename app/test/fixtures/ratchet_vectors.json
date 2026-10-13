@@ -1,0 +1,123 @@
+{
+ "note": "idLoSeed/idHiSeed là hạt giống X25519 (32 byte hex). rand: byte i-th của lần gọi thứ n = (tag*37+n)&0xff, tag lo=1, hi=2. 'lo' = bên có khóa công khai nhỏ hơn.",
+ "idSeed": {
+  "lo": "2222222222222222222222222222222222222222222222222222222222222222",
+  "hi": "1111111111111111111111111111111111111111111111111111111111111111"
+ },
+ "scenarios": {
+  "loFirst": [
+   {
+    "who": "lo",
+    "op": "encrypt",
+    "text": "một",
+    "wire": "dr2:AgGSC4Z8uUcSFbdUIQZ1F+WpvUZ34eHOE6TDt9QtM4a4ZAAAAAAAAAAALoWZ8euiSk7URiFraeFnEQEqki31"
+   },
+   {
+    "who": "lo",
+    "op": "encrypt",
+    "text": "hai",
+    "wire": "dr2:AgGSC4Z8uUcSFbdUIQZ1F+WpvUZ34eHOE6TDt9QtM4a4ZAAAAAAAAAABTxk4pLt8b5Wwnz9sri4pQ/FYcw=="
+   },
+   {
+    "who": "hi",
+    "op": "decrypt",
+    "wire": "dr2:AgGSC4Z8uUcSFbdUIQZ1F+WpvUZ34eHOE6TDt9QtM4a4ZAAAAAAAAAAALoWZ8euiSk7URiFraeFnEQEqki31"
+   },
+   {
+    "who": "hi",
+    "op": "decrypt",
+    "wire": "dr2:AgGSC4Z8uUcSFbdUIQZ1F+WpvUZ34eHOE6TDt9QtM4a4ZAAAAAAAAAABTxk4pLt8b5Wwnz9sri4pQ/FYcw=="
+   },
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "ba",
+    "wire": "dr2:AgCV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAAAzY9yCyigezbFjDfag7cJRvrZ"
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgCV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAAAzY9yCyigezbFjDfag7cJRvrZ"
+   },
+   {
+    "who": "lo",
+    "op": "encrypt",
+    "text": "bốn",
+    "wire": "dr2:AgHEalnuJmUVH4sYdCnKY+wG2rna03ULONcPd4DntR9eSQAAAAIAAAAAKkfQzrmLvsLGJLSfGvng157ZMHjn"
+   },
+   {
+    "who": "hi",
+    "op": "decrypt",
+    "wire": "dr2:AgHEalnuJmUVH4sYdCnKY+wG2rna03ULONcPd4DntR9eSQAAAAIAAAAAKkfQzrmLvsLGJLSfGvng157ZMHjn"
+   },
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "năm",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAEAAAAArtg4R67bVIm1xvs6IPuZhZa9zXk="
+   },
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "sáu",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAEAAAAB9Nz2ziW3td7/CUacLGW68V26KUU="
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAEAAAAArtg4R67bVIm1xvs6IPuZhZa9zXk="
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAEAAAAB9Nz2ziW3td7/CUacLGW68V26KUU="
+   }
+  ],
+  "hiFirst": [
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "hi-1",
+    "wire": "dr2:AgGV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAAAgcKDkre5U4kXCB8AeYmLM1UtK68="
+   },
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "hi-2",
+    "wire": "dr2:AgGV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAABcoB9pPyIPbeplVBLzN5MLHh8Aec="
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgGV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAAAgcKDkre5U4kXCB8AeYmLM1UtK68="
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgGV9Or+H+G2leS9J/w4OMUnsZRa/EVe4rDg+Bvf+63OJAAAAAAAAAABcoB9pPyIPbeplVBLzN5MLHh8Aec="
+   },
+   {
+    "who": "lo",
+    "op": "encrypt",
+    "text": "lo-1",
+    "wire": "dr2:AgHEalnuJmUVH4sYdCnKY+wG2rna03ULONcPd4DntR9eSQAAAAAAAAAA8+SZULyd1/MMP3sGUZPUlbkJuic="
+   },
+   {
+    "who": "hi",
+    "op": "decrypt",
+    "wire": "dr2:AgHEalnuJmUVH4sYdCnKY+wG2rna03ULONcPd4DntR9eSQAAAAAAAAAA8+SZULyd1/MMP3sGUZPUlbkJuic="
+   },
+   {
+    "who": "hi",
+    "op": "encrypt",
+    "text": "hi-3",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAAAAAAAE70z/hVMu5JKP0vIJ/jb7AEi/qo="
+   },
+   {
+    "who": "lo",
+    "op": "decrypt",
+    "wire": "dr2:AgAuogwJOhIBzIW/78jrRnO5CyO2wAOPorW1xaeLc4AJEAAAAAAAAAAAE70z/hVMu5JKP0vIJ/jb7AEi/qo="
+   }
+  ]
+ }
+}

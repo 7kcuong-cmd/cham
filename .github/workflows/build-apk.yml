@@ -1,0 +1,150 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_url:
+        description: 'Dia chi backend (https, khong dau / o cuoi)'
+        required: true
+        default: 'https://call.shoprobotai.com'
+  push:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/build-apk.yml']
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      API_URL: ${{ github.event.inputs.api_url || 'https://call.shoprobotai.com' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Ma nguon dang build (phai la ban moi nhat)
+        run: |
+          SHORT="${GITHUB_SHA::7}"
+          echo "BUILD_ID=$SHORT" >> "$GITHUB_ENV"
+          {
+            echo "### Ban build: \`$SHORT\`"
+            echo "Ma nay phai trung voi ma hien o cuoi man Cai dat trong app."
+            echo "File moi co trong ma nguon: $(ls app/lib/widgets/brand_mark.dart app/lib/watch/*.dart app/assets/audio/*.mp3 2>/dev/null | wc -l)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Bootstrap (flutter create, patch quyen, pub get, gen-l10n, analyze)
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          bash app/tool/bootstrap.sh --skip-tests 2>&1 | tee bootstrap-log.txt
+
+      - name: Thong tin thu vien flutter_webrtc (de viet doi giong, khong chan build)
+        continue-on-error: true
+        run: |
+          python3 - <<'PY' > webrtc-api.txt
+          import json, os, re, sys
+          cfg = json.load(open('app/.dart_tool/package_config.json'))
+          root = next(p['rootUri'] for p in cfg['packages'] if p['name'] == 'flutter_webrtc')
+          base = os.path.normpath(os.path.join('app/.dart_tool', root.replace('file://', ''))) if not root.startswith('file://') else root[7:]
+          print('flutter_webrtc dir:', base)
+          print(open(os.path.join(base, 'pubspec.yaml')).read().split('dependencies')[0][:400])
+          src = os.path.join(base, 'android', 'src', 'main')
+          files = []
+          for d, _, fs in os.walk(src):
+              for f in fs:
+                  if f.endswith(('.java', '.kt')):
+                      files.append(os.path.join(d, f))
+          print('FILES:')
+          for f in sorted(files): print(' ', os.path.relpath(f, src))
+          pat = re.compile(r'(Audio|Processor|Sink|Processing|Effect)', re.I)
+          for f in sorted(files):
+              name = os.path.basename(f)
+              if not pat.search(name): continue
+              print('\n=====', os.path.relpath(f, src))
+              for line in open(f, errors='ignore'):
+                  t = line.strip()
+                  if t.startswith(('package ', 'import ', 'public ', 'protected ', 'interface ', 'class ', 'abstract ', 'fun ', 'val ', 'object ')) or re.match(r'^(public|private)?\s*(static\s+)?[\w<>\[\], .]+\s+\w+\s*\(.*\)\s*(throws \w+\s*)?[{;]$', t):
+                      print(t)
+          PY
+          wc -l webrtc-api.txt
+          { echo "### Thu vien flutter_webrtc (Android)"; echo '```'; head -n 160 webrtc-api.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Chay test Dart (thong tin, khong chan build)
+        continue-on-error: true
+        working-directory: app
+        run: |
+          set -o pipefail
+          flutter test 2>&1 | tee ../test-log.txt
+          echo "### flutter test" >> "$GITHUB_STEP_SUMMARY"
+          tail -n 5 ../test-log.txt >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Chan som neu phan tich Dart co loi (tiet kiem ~7 phut Gradle)
+        run: |
+          if grep -E "^\s*error •" bootstrap-log.txt > errs.txt; then
+            { echo "### DUNG TRUOC KHI BUILD: Dart co loi bien dich"; echo '```'; head -30 errs.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            cat errs.txt
+            exit 1
+          fi
+
+      - name: Build APK (debug)
+        working-directory: app
+        run: |
+          set -o pipefail
+          WS_URL="$(echo "$API_URL" | sed -e 's#^https://#wss://#' -e 's#^http://#ws://#')/v1/ws"
+          flutter build apk --debug \
+            --dart-define=API_BASE_URL="$API_URL" \
+            --dart-define=WS_URL="$WS_URL" \
+            --dart-define=BUILD_ID=$BUILD_ID \
+            --dart-define=FEATURE_SOCIAL=true \
+            --dart-define=EMAIL_AUTH=true \
+            --dart-define=FULLSCREEN_CALL=${{ vars.FULLSCREEN_CALL || 'true' }} \
+            --dart-define=CHAT_BUBBLES=${{ vars.CHAT_BUBBLES || 'true' }} \
+            --dart-define=DOUBLE_RATCHET=${{ vars.DOUBLE_RATCHET || 'false' }} \
+            --dart-define=NATIVE_RECORDER=${{ vars.NATIVE_RECORDER || 'true' }} 2>&1 | tee ../build-log.txt
+
+      - name: Upload APK
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cham-debug-apk-${{ env.BUILD_ID }}
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
+
+      - name: Bao loi ro neu build hong
+        if: failure()
+        run: |
+          {
+            echo "### BUILD LOI - khong co APK moi. Dung cai lai APK cu."
+            echo "Tai artifact build-logs, gui cho Claude de sua."
+            echo '```'; grep -E "Error|error:|^e: |FAILED|Exception" build-log.txt bootstrap-log.txt 2>/dev/null | head -20; grep -A8 "What went wrong" build-log.txt 2>/dev/null | head -25; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            bootstrap-log.txt
+            build-log.txt
+            test-log.txt
+            webrtc-api.txt
+          if-no-files-found: ignore
